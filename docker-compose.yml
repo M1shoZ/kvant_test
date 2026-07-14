@@ -1,0 +1,12 @@
+services:
+  test-kvant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: test-kvant
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - EXTERNAL_API_URL=https://jsonplaceholder.typicode.com/users
+    restart: always
